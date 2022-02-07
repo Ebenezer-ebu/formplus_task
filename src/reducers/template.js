@@ -43,8 +43,7 @@ export default function template(
         ),
       };
     case SEARCH:
-      const check2 =
-        action.info.filtered.length > 0 ? action.info.filtered : state.data;
+      const check2 = action.info.filtered;
       return {
         ...state,
         filterData: action.info.filtered,

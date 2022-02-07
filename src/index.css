@@ -62,6 +62,7 @@ select {
   z-index: 1;
   border: 0.5px solid #c4c4c4;
 }
+
 .title {
   margin: 0rem;
   position: absolute;
@@ -323,4 +324,10 @@ a {
   .tada .info {
     font-size: 80px;
   }
+}
+
+.no_template {
+  color: #989898;
+  align-self: center;
+  font-size: 16px;
 }

@@ -1,20 +1,16 @@
 export const formatDoc = (data, el) => {
   if (el.category !== "All") {
     let sorted = data.data.filter((item) => {
-      if (
+      return (
         item.name.toLowerCase().includes(el.search) &&
         item.category.includes(el.category)
-      ) {
-        return item;
-      }
+      );
     });
     sorted = sortData(sorted, el.order, el.date);
     return sorted;
   } else {
     let sorted = data.data.filter((item) => {
-      if (item.name.toLowerCase().includes(el.search)) {
-        return item;
-      }
+      return item.name.toLowerCase().includes(el.search)
     });
     sorted = sortData(sorted, el.order, el.date);
     return sorted;

@@ -4,8 +4,7 @@ import { BsInfoCircle } from "react-icons/bs";
 
 const Cards = (props) => {
   const { templates } = props;
-  const displayData =
-    templates.currentData.length > 0 ? templates.currentData : [];
+  const displayData = templates.currentData;
   return (
     <div>
       <div className="tada" data-testid="tada">
@@ -20,15 +19,21 @@ const Cards = (props) => {
         <p>{templates.filterData.length} templates</p>
       </div>
       <div className="card-container">
-        {displayData.map((template, index) => (
-          <div className="card" key={index}>
-            <h2 className="details">{template.name}</h2>
-            <p className="details">{template.description}</p>
-            <a href={template.link} rel="noopener" className="tag details">
-              <h5>Use Template</h5>
-            </a>
-          </div>
-        ))}
+        {displayData.length > 0 ? (
+          displayData.map((template, index) => (
+            <div className="card" key={index}>
+              <h2 className="details">{template.name}</h2>
+              <p className="details">{template.description}</p>
+              <a href={template.link} rel="noopener" className="tag details">
+                <h5>Use Template</h5>
+              </a>
+            </div>
+          ))
+        ) : (
+          <h3 className="no_template">
+            No templates to display
+          </h3>
+        )}
       </div>
     </div>
   );

@@ -37,7 +37,7 @@ const Content = (props) => {
 
   useEffect(() => {
     dispatch(handleInitialData());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="container">

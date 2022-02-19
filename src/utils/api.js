@@ -1,8 +1,7 @@
-export const getData = async () => {
-    let response = await fetch(
-      "https://front-end-task-dot-result-analytics-dot-fpls-dev.uc.r.appspot.com/api/v1/public/task_templates"
-    );
-    let res = await response.json();
-    return res;
-};
+const url = process.env.REACT_APP_URL;
 
+export const getData = async () => {
+  let response = await fetch(url);
+  let res = await response.json();
+  return res;
+};
